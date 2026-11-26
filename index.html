@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mess-B-Gone Cleaning Services | Residential &amp; Commercial Cleaning in Edmonton</title>
+<meta name="description" content="Experience spotless spaces with Mess-B-Gone Cleaning Services. Professional residential and commercial cleaning in Edmonton, including Southwest Edmonton and Windermere. Call today for a free consultation!">
+<link rel="icon" href="images/mess-b-gone-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1E2A30;          /* logo charcoal */
+  --ink-2:#2B3A42;
+  --rose:#BE8C84;         /* logo diamond */
+  --rose-deep:#8E5A52;    /* readable rose for text on light */
+  --rose-mist:#F3E4E0;
+  --blush:#FBF6F4;        /* page */
+  --slate:#74808A;        /* logo bottle */
+  --cream:#FFFDF4;        /* logo lettering */
+  --line:#E6D6D2;
+  --text:#1E2A30;
+  --muted:#5C6870;
+  --serif:"Young Serif", Georgia, "Times New Roman", serif;
+  --sans:"Hanken Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color-scheme: light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--blush);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+main{overflow-x:clip}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12;margin:0;letter-spacing:-.01em}
+p{margin:0}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:16px;text-decoration:none;padding:15px 26px;border-radius:999px;border:2px solid transparent;transition:transform .2s ease, background-color .2s ease, color .2s ease;cursor:pointer;font-family:var(--sans)}
+.btn:hover{transform:translateY(-2px)}
+.btn-rose{background:var(--rose);color:var(--ink)}
+.btn-rose:hover{background:#cfa098}
+.btn-ghost{border-color:rgba(255,253,244,.35);color:var(--cream)}
+.btn-ghost:hover{border-color:var(--cream)}
+.btn-ink{background:var(--ink);color:var(--cream)}
+.btn-ink:hover{background:var(--ink-2)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* sparkle (4-point star from the logo) */
+.spark{position:absolute;width:28px;height:28px;color:var(--rose);pointer-events:none}
+.spark svg{width:100%;height:100%;display:block}
+
+/* ---------- top bar ---------- */
+.topbar{background:var(--ink);color:#C9CFD3;font-size:14px}
+.topbar .wrap{display:flex;gap:28px;align-items:center;justify-content:space-between;padding:9px 0;flex-wrap:wrap}
+.topbar ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.topbar a{text-decoration:none;color:var(--cream)}
+.topbar a:hover{color:var(--rose)}
+.topbar li{display:flex;gap:8px;align-items:center}
+.topbar svg{width:15px;height:15px;color:var(--rose)}
+
+/* ---------- header ---------- */
+header.site{position:sticky;top:0;z-index:50;background:rgba(251,246,244,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+header.site.scrolled{border-bottom-color:var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px 0}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{width:84px;height:84px;transition:width .3s,height .3s}
+header.site.scrolled .brand img{width:64px;height:64px}
+nav.main ul{display:flex;gap:6px;list-style:none;margin:0;padding:0}
+nav.main a{display:block;padding:10px 16px;text-decoration:none;font-weight:500;border-radius:999px;transition:background-color .2s}
+nav.main a:hover{background:var(--rose-mist)}
+nav.main a[aria-current="page"]{background:var(--ink);color:var(--cream)}
+.head-cta{display:flex;align-items:center;gap:18px}
+.head-phone{text-decoration:none;font-weight:600;font-size:15px;line-height:1.25;text-align:right}
+.head-phone small{display:block;font-weight:500;color:var(--muted);font-size:13px}
+.menu-btn{display:none;background:none;border:2px solid var(--ink);border-radius:999px;padding:9px 16px;font:600 15px var(--sans);color:var(--ink);cursor:pointer}
+
+/* ---------- hero ---------- */
+.hero{background:var(--ink);color:var(--cream);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(600px 420px at 78% 40%, rgba(190,140,132,.16), transparent 70%);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:80px 0 96px;position:relative}
+.hero h1{font-size:clamp(40px,5.2vw,70px);max-width:13ch}
+.hero .lede{margin-top:26px;font-size:19px;line-height:1.65;color:#D5DADD;max-width:52ch}
+.hero .actions{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.hero .tags{margin-top:44px;display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0}
+.hero .tags li{border:1px solid rgba(255,253,244,.2);border-radius:999px;padding:7px 15px;font-size:14px;color:#D5DADD;display:flex;align-items:center;gap:8px}
+.hero .tags li::before{content:"";width:7px;height:7px;background:var(--rose);transform:rotate(45deg)}
+
+.stage{position:relative;aspect-ratio:1/1;width:min(100%,600px);justify-self:end}
+.stage .backplate{position:absolute;inset:6%;background:var(--rose);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);transform:translate(7%,5%)}
+.stage .diamond{position:absolute;inset:6%;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);overflow:hidden;background:#3a474e}
+.stage .diamond img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%}
+.stage .fog{filter:blur(7px) saturate(.35) brightness(.85) contrast(.9);transform:scale(1.06)}
+.stage .clean{clip-path:inset(0 100% 0 0);animation:wipe 1.9s cubic-bezier(.65,.05,.3,1) .5s forwards}
+.stage .squeegee{position:absolute;top:0;bottom:0;left:0;width:8%;background:linear-gradient(90deg,transparent,rgba(255,253,244,.55) 55%,rgba(255,253,244,.9) 62%,transparent 70%);transform:translateX(-120%);animation:sweep 1.9s cubic-bezier(.65,.05,.3,1) .5s forwards}
+@keyframes wipe{to{clip-path:inset(0 0 0 0)}}
+@keyframes sweep{0%{transform:translateX(-120%);opacity:1}92%{opacity:1}100%{transform:translateX(1250%);opacity:0}}
+.stage .spark{animation:twinkle 3.2s ease-in-out infinite;opacity:0}
+.stage .s1{top:4%;left:10%;width:34px;height:34px;animation-delay:2.4s}
+.stage .s2{top:16%;right:2%;width:22px;height:22px;animation-delay:3.1s;color:var(--cream)}
+.stage .s3{bottom:10%;left:2%;width:26px;height:26px;animation-delay:2.8s}
+.stage .s4{bottom:2%;right:20%;width:38px;height:38px;animation-delay:3.6s}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(.4) rotate(0)}45%{opacity:1;transform:scale(1) rotate(25deg)}70%{opacity:.85;transform:scale(.9) rotate(35deg)}}
+.stage .badge{position:absolute;left:-4%;bottom:14%;background:var(--cream);color:var(--ink);border-radius:18px;padding:14px 18px 14px 14px;display:flex;align-items:center;gap:12px;box-shadow:0 18px 40px rgba(0,0,0,.28);opacity:0;transform:translateY(14px);animation:rise .6s ease 2.5s forwards}
+.stage .badge .ic{width:44px;height:44px;border-radius:12px;background:var(--rose-mist);display:grid;place-items:center;color:var(--rose-deep)}
+.stage .badge .ic svg{width:24px;height:24px}
+.stage .badge b{display:block;font-size:15px}
+.stage .badge span{font-size:13px;color:var(--muted)}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* ---------- promise band ---------- */
+.band{background:var(--rose);color:var(--ink)}
+.band ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}
+.band li{padding:26px 22px;display:flex;gap:14px;align-items:center;font-weight:600;line-height:1.3}
+.band li+li{border-left:1px solid rgba(30,42,48,.18)}
+.band svg{width:30px;height:30px;flex:none}
+
+/* ---------- about ---------- */
+.about{padding:120px 0 110px}
+.about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}
+.frame{position:relative}
+.frame .photo{border-radius:240px 240px 24px 24px;overflow:hidden;aspect-ratio:4/5}
+.frame .photo img{width:100%;height:100%;object-fit:cover;object-position:40% 50%}
+.frame .stamp{position:absolute;right:-28px;top:38px;width:132px;height:132px;background:var(--ink);color:var(--cream);transform:rotate(45deg);border-radius:14px;display:grid;place-items:center}
+.frame .stamp div{transform:rotate(-45deg);text-align:center;font-family:var(--serif);font-size:19px;line-height:1.1}
+.frame .stamp small{display:block;font-family:var(--sans);font-size:12px;color:var(--rose);margin-top:4px}
+.frame .spark{left:-18px;bottom:60px;width:40px;height:40px}
+.about h2{font-size:clamp(34px,3.6vw,50px);max-width:19ch}
+.about p{margin-top:22px;color:var(--muted);max-width:60ch}
+.hoods{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0}
+.hoods li{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:500;font-size:15px}
+.about .btn{margin-top:34px}
+
+/* ---------- services ---------- */
+.services{background:var(--cream);padding:110px 0;border-block:1px solid var(--line)}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:40px;flex-wrap:wrap;margin-bottom:52px}
+.sec-head h2{font-size:clamp(34px,3.6vw,50px);max-width:22ch}
+.sec-head p{color:var(--muted);max-width:44ch}
+.svc{display:grid;grid-template-columns:340px 1fr;gap:0;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:#fff}
+.svc [role="tablist"]{display:flex;flex-direction:column;background:var(--blush);border-right:1px solid var(--line)}
+.svc [role="tab"]{all:unset;cursor:pointer;padding:28px 30px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--serif);font-size:24px;transition:background-color .25s,color .25s}
+.svc [role="tab"]:last-child{border-bottom:0}
+.svc [role="tab"] .mk{width:12px;height:12px;border:2px solid var(--rose);transform:rotate(45deg);transition:background-color .25s}
+.svc [role="tab"]:hover{background:var(--rose-mist)}
+.svc [role="tab"][aria-selected="true"]{background:var(--ink);color:var(--cream)}
+.svc [role="tab"][aria-selected="true"] .mk{background:var(--rose);border-color:var(--rose)}
+.svc [role="tab"]:focus-visible{outline:3px solid var(--rose);outline-offset:-3px}
+.svc .note{margin-top:auto;padding:26px 30px;font-size:15px;color:var(--muted);border-top:1px solid var(--line)}
+.svc .note a{color:var(--rose-deep);font-weight:600}
+.panel{padding:52px 56px;position:relative}
+.panel[hidden]{display:none}
+.panel.show{animation:panelIn .45s ease}
+@keyframes panelIn{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+.panel h3{font-size:clamp(28px,2.6vw,38px)}
+.panel p{margin-top:16px;color:var(--muted);max-width:62ch}
+.panel ul{margin:30px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px}
+.panel li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
+.panel li svg{width:22px;height:22px;flex:none;color:var(--rose-deep);margin-top:2px}
+.panel .btn{margin-top:36px}
+
+.extras{margin-top:80px;display:grid;grid-template-columns:.7fr 1.3fr;gap:60px}
+.extras h3{font-size:clamp(28px,2.6vw,36px)}
+.extras .x-intro p{margin-top:14px;color:var(--muted);max-width:34ch}
+.checklist{list-style:none;margin:0;padding:0;columns:2;column-gap:40px}
+.checklist li{break-inside:avoid;padding:14px 0;border-bottom:1px dashed var(--line);display:flex;gap:14px}
+.checklist .box{flex:none;width:22px;height:22px;border:2px solid var(--slate);border-radius:6px;margin-top:3px;position:relative;transition:background-color .3s,border-color .3s}
+.checklist .box::after{content:"";position:absolute;left:5px;top:1px;width:6px;height:11px;border:solid var(--cream);border-width:0 2.5px 2.5px 0;transform:rotate(45deg) scale(0);transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.checklist.ticked .box{background:var(--rose-deep);border-color:var(--rose-deep)}
+.checklist.ticked .box::after{transform:rotate(45deg) scale(1)}
+.checklist b{display:block;font-weight:600}
+.checklist span{font-size:15px;color:var(--muted)}
+
+/* ---------- home / business ---------- */
+.spaces{padding:120px 0}
+.spaces .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.spaces h2{font-size:clamp(34px,3.6vw,50px);max-width:16ch}
+.spaces .intro{margin-top:20px;color:var(--muted);max-width:48ch}
+.switch{margin-top:34px;display:inline-grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px;position:relative}
+.switch button{all:unset;cursor:pointer;padding:12px 26px;font-weight:600;position:relative;z-index:1;text-align:center;transition:color .3s}
+.switch button[aria-pressed="true"]{color:var(--cream)}
+.switch button:focus-visible{outline:3px solid var(--rose);border-radius:999px}
+.switch .pill{position:absolute;top:5px;bottom:5px;left:5px;width:calc(50% - 5px);background:var(--ink);border-radius:999px;transition:transform .45s cubic-bezier(.6,.1,.25,1)}
+.switch.biz .pill{transform:translateX(100%)}
+.space-card{background:var(--ink);color:var(--cream);border-radius:32px;padding:48px;position:relative;overflow:hidden;min-height:440px}
+.space-card .art{position:absolute;right:-30px;bottom:-30px;width:260px;height:260px;color:rgba(190,140,132,.22);transition:opacity .4s,transform .5s}
+.space-card .art svg{width:100%;height:100%}
+.space-card .view{position:relative;transition:opacity .35s,transform .35s}
+.space-card .view[hidden]{display:none}
+.space-card .view.out{opacity:0;transform:translateY(10px)}
+.space-card h3{font-size:34px}
+.space-card p{margin-top:14px;color:#C9CFD3;max-width:42ch}
+.space-card ul{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:12px}
+.space-card li{display:flex;gap:12px;align-items:center}
+.space-card li::before{content:"";width:9px;height:9px;background:var(--rose);transform:rotate(45deg);flex:none}
+
+/* ---------- why ---------- */
+.why{background:var(--rose-mist);padding:120px 0}
+.why .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+.why .side{position:sticky;top:130px;align-self:start}
+.why h2{font-size:clamp(34px,3.8vw,52px)}
+.why .side p{margin-top:20px;color:var(--muted);max-width:40ch}
+.why .side .btn{margin-top:30px}
+.reasons{list-style:none;margin:0;padding:0}
+.reasons li{display:grid;grid-template-columns:64px 1fr;gap:22px;padding:34px 0;border-top:1px solid rgba(142,90,82,.25)}
+.reasons li:last-child{border-bottom:1px solid rgba(142,90,82,.25)}
+.reasons .ic{width:64px;height:64px;border-radius:18px;background:var(--cream);display:grid;place-items:center;color:var(--rose-deep)}
+.reasons .ic svg{width:30px;height:30px}
+.reasons h3{font-size:25px}
+.reasons p{margin-top:8px;color:var(--muted)}
+
+/* ---------- steps ---------- */
+.steps{padding:120px 0}
+.steps .sec-head{margin-bottom:60px}
+.track{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;position:relative;counter-reset:s}
+.track li:not(:last-child)::after{content:"";position:absolute;top:34px;left:92px;right:4px;border-top:2px dashed var(--rose)}
+.track li{position:relative;counter-increment:s}
+.track .num{width:68px;height:68px;background:var(--blush);display:grid;place-items:center;position:relative}
+.track .num::before{content:"";position:absolute;inset:6px;background:var(--ink);transform:rotate(45deg);border-radius:8px}
+.track .num::after{content:counter(s);position:relative;color:var(--cream);font-family:var(--serif);font-size:24px}
+.track h3{margin-top:26px;font-size:26px}
+.track p{margin-top:10px;color:var(--muted);max-width:34ch}
+
+/* ---------- area ---------- */
+.area{background:var(--ink);color:var(--cream);padding:110px 0;overflow:hidden}
+.area .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:center}
+.area h2{font-size:clamp(34px,3.6vw,50px);max-width:16ch}
+.area p{margin-top:20px;color:#C9CFD3;max-width:46ch}
+.cities{margin-top:34px;display:grid;gap:0;max-width:440px}
+.cities div{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-top:1px solid rgba(255,253,244,.15);font-family:var(--serif);font-size:26px}
+.cities div:last-child{border-bottom:1px solid rgba(255,253,244,.15)}
+.cities small{font-family:var(--sans);font-size:14px;color:var(--rose)}
+.map{position:relative}
+.map svg{width:100%;height:auto;display:block}
+.map .pulse{transform-origin:center;transform-box:fill-box;animation:pulse 2.6s ease-out infinite}
+.map .pulse.d2{animation-delay:.9s}.map .pulse.d3{animation-delay:1.7s}
+@keyframes pulse{0%{transform:scale(.6);opacity:.7}100%{transform:scale(2.6);opacity:0}}
+
+/* ---------- contact ---------- */
+.contact{padding:120px 0}
+.contact .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.contact h2{font-size:clamp(32px,3.4vw,46px);max-width:20ch}
+.contact .lead{margin-top:20px;color:var(--muted);max-width:50ch}
+.details{margin-top:36px;display:grid;gap:22px}
+.details a,.details div.row{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:center;text-decoration:none}
+.details .ic{width:52px;height:52px;border-radius:50%;background:var(--rose-mist);display:grid;place-items:center;color:var(--rose-deep)}
+.details .ic svg{width:22px;height:22px}
+.details small{display:block;color:var(--muted);font-size:14px}
+.details b{font-weight:600}
+.details a:hover b{color:var(--rose-deep)}
+form.quote{width:100%;background:#fff;border:1px solid var(--line);border-radius:30px;padding:44px;position:relative}
+form.quote::before{content:"";position:absolute;top:-18px;right:46px;width:36px;height:36px;background:var(--rose);transform:rotate(45deg);border-radius:6px}
+form.quote h3{font-size:30px}
+form.quote .sub{margin-top:8px;color:var(--muted);font-size:15px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-weight:600;font-size:14px}
+.field input,.field textarea{font:inherit;font-size:16px;color:var(--text);background:var(--blush);border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;transition:border-color .2s,background-color .2s}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--rose-deep);background:#fff}
+.field textarea{min-height:130px;resize:vertical}
+form.quote .btn{margin-top:24px;width:100%;justify-content:center;border:0}
+.form-msg{margin-top:14px;font-size:15px;color:var(--rose-deep);min-height:1.4em}
+
+/* ---------- footer ---------- */
+footer{background:#172126;color:#B9C1C6;padding:84px 0 0;font-size:15px}
+.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:48px}
+.foot .brand img{width:120px;height:120px}
+.foot .about-f{margin-top:18px;max-width:34ch}
+.foot h4{color:var(--cream);font-family:var(--serif);font-weight:400;font-size:20px;margin:0 0 18px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--rose)}
+.foot-bottom{margin-top:64px;border-top:1px solid rgba(255,253,244,.1);padding:24px 0 calc(24px + env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:14px}
+.foot-bottom a{color:var(--cream);text-decoration:underline;text-underline-offset:3px}
+.foot-bottom a:hover{color:var(--rose)}
+
+/* ---------- responsive ---------- */
+@media (max-width:1080px){
+  nav.main,.head-phone{display:none}
+  .menu-btn{display:inline-block}
+  nav.main.open{display:block;position:absolute;left:0;right:0;top:100%;background:var(--blush);border-bottom:1px solid var(--line);padding:12px 24px 20px}
+  nav.main.open ul{flex-direction:column}
+  .hero .wrap,.about .wrap,.spaces .wrap,.why .wrap,.area .wrap,.contact .wrap{grid-template-columns:1fr}
+  .stage{justify-self:center;width:min(100%,480px)}
+  .why .side{position:static}
+  .band ul{grid-template-columns:1fr 1fr}
+  .band li:nth-child(3){border-left:0}
+  .band li:nth-child(n+3){border-top:1px solid rgba(30,42,48,.18)}
+  .svc{grid-template-columns:1fr}
+  .svc [role="tablist"]{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line)}
+  .svc [role="tab"]{border-bottom:0;border-right:1px solid var(--line);font-size:19px;padding:20px 22px;white-space:nowrap}
+  .svc .note{display:none}
+  .extras{grid-template-columns:1fr;gap:28px}
+  .foot{grid-template-columns:1fr 1fr}
+  .frame{max-width:460px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{width:min(1200px,100% - 36px)}
+  .topbar ul li.hide-sm{display:none}
+  .brand img{width:66px;height:66px}
+  .hero .wrap{padding:56px 0 70px}
+  .panel{padding:34px 24px}
+  .panel ul{grid-template-columns:1fr}
+  .checklist{columns:1}
+  .track{grid-template-columns:1fr}
+  .track li:not(:last-child)::after{display:none}
+  .track li{display:grid;grid-template-columns:68px 1fr;column-gap:20px}
+  .track .num{grid-row:span 2}
+  .track h3{margin-top:14px}
+  .head-cta .btn-ink{display:none}
+  .band ul{grid-template-columns:1fr}
+  .band li+li{border-left:0;border-top:1px solid rgba(30,42,48,.18)}
+  .grid2{grid-template-columns:1fr}
+  form.quote{padding:30px 22px}
+  .space-card{padding:34px 26px}
+  .frame .stamp{right:10px;top:20px;width:104px;height:104px}
+  .switch button{padding:12px 18px;font-size:15px}
+  .foot{grid-template-columns:1fr}
+  .about,.services,.spaces,.why,.steps,.area,.contact{padding:80px 0}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .stage .clean{clip-path:none}
+  .stage .squeegee{display:none}
+  .stage .badge{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.6 5.6 2.2 9.7 12 12-9.8 2.3-11.4 6.4-12 12-.6-5.6-2.2-9.7-12-12C9.8 9.7 11.4 5.6 12 0Z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 3h3.5l1.8 4.5-2.3 1.4a11 11 0 0 0 5.1 5.1l1.4-2.3L19 13.5V17a2 2 0 0 1-2 2A15 15 0 0 1 3 5a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11.5a7 7 0 0 1 14 0C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16 9.8"/></g></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 11 12 3.5 21 11v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-9Z"/></symbol>
+    <symbol id="i-paw" viewBox="0 0 24 24"><g fill="currentColor"><ellipse cx="6" cy="10" rx="2" ry="2.6"/><ellipse cx="10" cy="6" rx="2" ry="2.6"/><ellipse cx="14.5" cy="6" rx="2" ry="2.6"/><ellipse cx="18.4" cy="10" rx="2" ry="2.6"/><path d="M12.2 11.5c2.6 0 5.3 3.6 5.3 6.1 0 1.8-1.4 2.6-3 2.3-1-.2-1.6-.6-2.3-.6s-1.3.4-2.3.6c-1.6.3-3-.5-3-2.3 0-2.5 2.7-6.1 5.3-6.1Z"/></g></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-9 5-14 15-14 0 10-5 15-14 15"/><path d="M5 19 13 11"/></g></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></g></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 10h6M9 14h6M9 18h3"/></g></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3c.5 4.4 1.8 7.6 9 9-7.2 1.4-8.5 4.6-9 9-.5-4.4-1.8-7.6-9-9 7.2-1.4 8.5-4.6 9-9Z"/></g></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h3l4 2h4a1.5 1.5 0 0 1 0 3H10"/><path d="M6 20h9l6-4.5a1.6 1.6 0 0 0-2-2.5L15 15"/><path d="M14 4a3 3 0 0 1 3 3c0 2-3 4-3 4s-3-2-3-4a3 3 0 0 1 3-3Z"/></g></symbol>
+    <symbol id="i-house-big" viewBox="0 0 100 100"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" d="M10 48 50 14l40 34v42H62V64H38v26H10V48Z"/></symbol>
+    <symbol id="i-office-big" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"><path d="M16 90V12h44v78M60 34h26v56M8 90h86"/><path d="M26 24h8M42 24h8M26 38h8M42 38h8M26 52h8M42 52h8M26 66h8M42 66h8M68 46h10M68 60h10M68 74h10"/></g></symbol>
+  </defs>
+</svg>
+
+<!-- ============ TOP BAR ============ -->
+<div class="topbar">
+  <div class="wrap">
+    <ul>
+      <li><svg><use href="#i-phone"/></svg><a href="tel:+15875455036">(587) 545-5036</a></li>
+      <li><svg><use href="#i-mail"/></svg><a href="mailto:info@messbgone.ca">info@messbgone.ca</a></li>
+    </ul>
+    <ul>
+      <li class="hide-sm"><svg><use href="#i-clock"/></svg>Monday to Saturday, 9:00am to 5:00pm</li>
+      <li class="hide-sm"><svg><use href="#i-pin"/></svg>Edmonton, AB</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="site" id="top">
+  <div class="wrap">
+    <a class="brand" href="https://www.messbgone.ca" aria-label="Mess-B-Gone Cleaning Services home">
+      <img src="images/mess-b-gone-logo.png" alt="Mess-B-Gone Cleaning Services logo" width="269" height="269">
+    </a>
+    <nav class="main" id="mainnav" aria-label="Main">
+      <ul>
+        <li><a href="https://www.messbgone.ca" aria-current="page">Home</a></li>
+        <li><a href="https://www.messbgone.ca/services">Services</a></li>
+        <li><a href="https://www.messbgone.ca/gallery">Gallery</a></li>
+        <li><a href="https://www.messbgone.ca/contact-us">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="head-cta">
+      <a class="head-phone" href="tel:+15875455036"><small>Call for a free consultation</small>(587) 545-5036</a>
+      <a class="btn btn-ink" href="#contact">Book a consultation</a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="mainnav">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Southwest Edmonton’s trusted cleaning specialists</h1>
+      <p class="lede">Sparkling homes and spotless spaces. From deep cleans to move-in/move-out refreshes, we serve Edmonton and the surrounding communities with exceptional care and a friendly touch.</p>
+      <div class="actions">
+        <a class="btn btn-rose" href="#contact">Book a free in-home consultation</a>
+        <a class="btn btn-ghost" href="tel:+15875455036"><svg><use href="#i-phone"/></svg>(587) 545-5036</a>
+      </div>
+      <ul class="tags">
+        <li>Residential &amp; commercial</li>
+        <li>Pet-friendly</li>
+        <li>Eco-conscious</li>
+        <li>One-time or ongoing</li>
+      </ul>
+    </div>
+
+    <div class="stage" aria-hidden="true">
+      <div class="backplate"></div>
+      <div class="diamond">
+        <img class="fog" src="images/counter-cleaning.jpg" alt="">
+        <img class="clean" src="images/counter-cleaning.jpg" alt="">
+        <div class="squeegee"></div>
+      </div>
+      <span class="spark s1"><svg><use href="#i-spark"/></svg></span>
+      <span class="spark s2"><svg><use href="#i-spark"/></svg></span>
+      <span class="spark s3"><svg><use href="#i-spark"/></svg></span>
+      <span class="spark s4"><svg><use href="#i-spark"/></svg></span>
+      <div class="badge">
+        <div class="ic"><svg><use href="#i-paw"/></svg></div>
+        <div><b>110% pet-friendly</b><span>Safe for every member of the family</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROMISE BAND ============ -->
+<section class="band" aria-label="Our promises">
+  <div class="wrap">
+    <ul>
+      <li><svg><use href="#i-home"/></svg>Free in-home consultation</li>
+      <li><svg><use href="#i-paw"/></svg>110% pet-friendly service</li>
+      <li><svg><use href="#i-leaf"/></svg>Green, eco-friendly products</li>
+      <li><svg><use href="#i-cal"/></svg>One-time or regular schedules</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="frame">
+      <div class="photo"><img src="images/cleaning-supplies-kit.jpg" alt="A caddy of cleaning supplies on a granite kitchen counter" loading="lazy"></div>
+      <div class="stamp"><div>Free<small>in-home consultation</small></div></div>
+      <span class="spark"><svg><use href="#i-spark"/></svg></span>
+    </div>
+    <div>
+      <h2>Your go-to cleaning specialists in Southwest Edmonton and beyond</h2>
+      <p>At Mess&#8209;B&#8209;Gone Cleaning Services, we take pride in offering more than just a clean home. We deliver a personalized cleaning experience tailored to your lifestyle, with care and attention to detail in every room.</p>
+      <p>Our team provides a pet-friendly, eco-conscious service that fits seamlessly into your routine. From deep cleaning to quick touch-ups, let us take the cleaning off your to-do list, so you can spend more time enjoying your home.</p>
+      <ul class="hoods" aria-label="Neighbourhoods we serve">
+        <li>Windermere</li><li>Ambleside</li><li>Keswick</li><li>Rutherford</li><li>All of Edmonton</li>
+      </ul>
+      <a class="btn btn-ink" href="https://www.messbgone.ca/contact-us">Contact us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Trusted cleaning services in Southwest Edmonton</h2>
+      <p>Residential and commercial cleaning, available as a one-time visit or on a regular schedule.</p>
+    </div>
+
+    <div class="svc">
+      <div role="tablist" aria-label="Main services">
+        <button role="tab" id="t-general" aria-selected="true" aria-controls="p-general">General cleaning<span class="mk"></span></button>
+        <button role="tab" id="t-deep" aria-selected="false" aria-controls="p-deep" tabindex="-1">Deep cleaning<span class="mk"></span></button>
+        <button role="tab" id="t-move" aria-selected="false" aria-controls="p-move" tabindex="-1">Move-in / move-out<span class="mk"></span></button>
+        <p class="note">Every service starts with a <a href="#contact">free in-home consultation</a>.</p>
+      </div>
+
+      <div class="panel show" role="tabpanel" id="p-general" aria-labelledby="t-general">
+        <h3>General cleaning</h3>
+        <p>Thorough cleaning that keeps your home or office fresh and inviting. Whether it’s regular upkeep or a one-time refresh, we take care of every corner and leave your space clean, healthy and organized.</p>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Dusting and surface cleaning</li>
+          <li><svg><use href="#i-check"/></svg>Vacuuming and mopping</li>
+          <li><svg><use href="#i-check"/></svg>Kitchens and bathrooms</li>
+          <li><svg><use href="#i-check"/></svg>Flexible scheduling</li>
+        </ul>
+        <a class="btn btn-ink" href="https://www.messbgone.ca/services">View all services</a>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-deep" aria-labelledby="t-deep" hidden>
+        <h3>Deep cleaning</h3>
+        <p>Goes beyond the surface to tackle the areas that often get overlooked. Ideal before a special event or when your home or office needs a fresh start.</p>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>High-touch areas</li>
+          <li><svg><use href="#i-check"/></svg>Baseboards and corners</li>
+          <li><svg><use href="#i-check"/></svg>Hard-to-reach spots</li>
+          <li><svg><use href="#i-check"/></svg>Deep sanitizing of kitchens and bathrooms</li>
+          <li><svg><use href="#i-check"/></svg>Floors and high-traffic areas</li>
+        </ul>
+        <a class="btn btn-ink" href="https://www.messbgone.ca/services">View all services</a>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-move" aria-labelledby="t-move" hidden>
+        <h3>Move-in / move-out cleaning</h3>
+        <p>Moving is stressful enough. Whether you’re settling into a new home or leaving an old one behind, we make sure every room is fresh, clean and ready for the next chapter.</p>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Scrubbing floors</li>
+          <li><svg><use href="#i-check"/></svg>Sanitizing bathrooms</li>
+          <li><svg><use href="#i-check"/></svg>Wiping down kitchen surfaces</li>
+          <li><svg><use href="#i-check"/></svg>Deep-cleaning appliances</li>
+        </ul>
+        <a class="btn btn-ink" href="https://www.messbgone.ca/services">View all services</a>
+      </div>
+    </div>
+
+    <div class="extras">
+      <div class="x-intro"><h3>Also on our checklist</h3><p>Add any of these to a one-time visit or your regular plan.</p></div>
+      <ul class="checklist" id="checklist">
+        <li><span class="box"></span><div><b>Office cleaning</b><span>A clean, productive workspace</span></div></li>
+        <li><span class="box"></span><div><b>Interior window cleaning</b><span>Streak-free glass inside</span></div></li>
+        <li><span class="box"></span><div><b>Floor cleaning</b><span>Every type of flooring</span></div></li>
+        <li><span class="box"></span><div><b>Kitchen cleaning</b><span>Appliances, cabinets, counters</span></div></li>
+        <li><span class="box"></span><div><b>Bathroom sanitization</b><span>Every surface, top to bottom</span></div></li>
+        <li><span class="box"></span><div><b>Dusting and surface cleaning</b><span>Clean and allergen-free</span></div></li>
+        <li><span class="box"></span><div><b>Ceiling fans and light fixtures</b><span>Dust and grime from high places</span></div></li>
+        <li><span class="box"></span><div><b>Holiday or event cleaning</b><span>Before and after the party</span></div></li>
+        <li><span class="box"></span><div><b>Wall washing and spot cleaning</b><span>Marks and stains removed</span></div></li>
+        <li><span class="box"></span><div><b>Grout and tile cleaning</b><span>Deep cleaned and restored</span></div></li>
+        <li><span class="box"></span><div><b>Refrigerator and oven cleaning</b><span>Cleaned and sanitized</span></div></li>
+        <li><span class="box"></span><div><b>Janitorial services</b><span>Regular care for businesses</span></div></li>
+        <li><span class="box"></span><div><b>Green cleaning</b><span>Non-toxic, sustainable products</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOME / BUSINESS ============ -->
+<section class="spaces">
+  <div class="wrap">
+    <div>
+      <h2>Every home and business is unique</h2>
+      <p class="intro">We listen closely to your needs and create a cleaning plan that works for you, so your space stays comfortable and fresh.</p>
+      <div class="switch" id="switch" role="group" aria-label="Choose a space">
+        <span class="pill"></span>
+        <button type="button" aria-pressed="true" data-view="home">For your home</button>
+        <button type="button" aria-pressed="false" data-view="biz">For your business</button>
+      </div>
+    </div>
+    <div class="space-card" aria-live="polite">
+      <div class="art" id="space-art"><svg><use href="#i-house-big"/></svg></div>
+      <div class="view" id="v-home">
+        <h3>Residential cleaning</h3>
+        <p>Routine house cleaning, deep cleans and move-in/move-out refreshes, done with a friendly touch.</p>
+        <ul>
+          <li>Routine house cleaning</li>
+          <li>Deep cleaning</li>
+          <li>Move-in / move-out cleaning</li>
+          <li>Post-party and holiday cleanup</li>
+          <li>Pet-friendly, eco-conscious products</li>
+        </ul>
+      </div>
+      <div class="view" id="v-biz" hidden>
+        <h3>Commercial cleaning</h3>
+        <p>Office tidying and janitorial care that keeps your workspace clean and productive.</p>
+        <ul>
+          <li>Office cleaning</li>
+          <li>Janitorial services for commercial spaces</li>
+          <li>Floor cleaning</li>
+          <li>Interior window cleaning</li>
+          <li>Regular or one-time service</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section class="why">
+  <div class="wrap">
+    <div class="side">
+      <h2>Why choose Mess&#8209;B&#8209;Gone Cleaning Services?</h2>
+      <p>A spotless home, exceptional service, and a cleaning experience you can trust.</p>
+      <a class="btn btn-ink" href="#contact">Book your free consultation</a>
+    </div>
+    <ul class="reasons">
+      <li><div class="ic"><svg><use href="#i-cal"/></svg></div><div><h3>Available when you need us</h3><p>Life gets messy, so we’re here when you need us most. One-time deep clean or ongoing maintenance, our flexible scheduling suits your busy life.</p></div></li>
+      <li><div class="ic"><svg><use href="#i-list"/></svg></div><div><h3>Complete cleaning services</h3><p>Routine house cleaning, office tidying, deep cleaning, move-in/move-out services and post-party cleanup, all tailored to your needs.</p></div></li>
+      <li><div class="ic"><svg><use href="#i-home"/></svg></div><div><h3>Free in-home consultation</h3><p>We get to know your requirements, lifestyle and preferences before we start, so we deliver exactly what you need.</p></div></li>
+      <li><div class="ic"><svg><use href="#i-star"/></svg></div><div><h3>Trusted experts</h3><p>Our team is experienced and passionate about making your space shine. We focus on the details and take the time to get it right, every time.</p></div></li>
+      <li><div class="ic"><svg><use href="#i-hand"/></svg></div><div><h3>Tailored to you</h3><p>We listen closely and create a cleaning plan that works for your home or business, keeping your space comfortable and fresh.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ STEPS ============ -->
+<section class="steps">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Getting started is simple</h2>
+      <p>Three steps from your first call to a sparkling home.</p>
+    </div>
+    <ol class="track">
+      <li><span class="num" aria-hidden="true"></span><h3>Free consultation</h3><p>We visit your home to understand your requirements, lifestyle and preferences.</p></li>
+      <li><span class="num" aria-hidden="true"></span><h3>Your cleaning plan</h3><p>We build a plan around your space and choose one-time or regular visits.</p></li>
+      <li><span class="num" aria-hidden="true"></span><h3>We make it shine</h3><p>Our team handles the cleaning so you can spend more time enjoying your home.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ SERVICE AREA ============ -->
+<section class="area" id="area">
+  <div class="wrap">
+    <div>
+      <h2>Proudly serving Edmonton and area</h2>
+      <p>Based in Southwest Edmonton, we serve homes and businesses across the city and the surrounding communities.</p>
+      <div class="cities">
+        <div>Edmonton <small>Home base</small></div>
+        <div>St. Albert <small>Northwest</small></div>
+        <div>Stony Plain <small>West</small></div>
+      </div>
+    </div>
+    <div class="map" aria-hidden="true">
+      <svg viewBox="0 0 560 440" fill="none">
+        <!-- Edmonton -->
+        <path d="M250 110c60-28 150-20 196 26 40 40 52 110 26 168-26 58-96 92-170 86-70-6-120-44-138-100-18-58 22-150 86-180Z" fill="#2B3A42" stroke="#3E4E57" stroke-width="2"/>
+        <!-- Southwest highlight -->
+        <path d="M200 260c14 50 58 84 112 92 10-46-2-92-40-118-26-18-56-14-72 26Z" fill="#BE8C84" fill-opacity=".35"/>
+        <!-- river -->
+        <path d="M150 360c40-6 70-34 96-60 22-22 34-50 66-60 36-12 58 16 88-6 24-18 30-54 56-74 18-14 44-16 62-20" stroke="#74808A" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+        <!-- St Albert -->
+        <path d="M218 40c26-12 62-6 74 16 12 22-2 52-30 58-30 6-58-10-60-34-1-16 4-32 16-40Z" fill="#2B3A42" stroke="#3E4E57" stroke-width="2"/>
+        <!-- Stony Plain -->
+        <path d="M26 200c20-14 52-12 64 8 12 20 2 46-22 54-24 8-50-4-54-26-2-14 2-28 12-36Z" fill="#2B3A42" stroke="#3E4E57" stroke-width="2"/>
+        <!-- dashed links -->
+        <path d="M100 222c60-10 110 0 150 26" stroke="#BE8C84" stroke-width="2" stroke-dasharray="6 7"/>
+        <path d="M258 116c4 30 18 60 38 84" stroke="#BE8C84" stroke-width="2" stroke-dasharray="6 7"/>
+        <!-- pins -->
+        <g transform="translate(262 286)"><circle class="pulse" r="12" fill="#BE8C84"/><rect x="-9" y="-9" width="18" height="18" rx="3" transform="rotate(45)" fill="#BE8C84"/></g>
+        <g transform="translate(250 72)"><circle class="pulse d2" r="10" fill="#BE8C84"/><rect x="-7" y="-7" width="14" height="14" rx="2" transform="rotate(45)" fill="#FFFDF4"/></g>
+        <g transform="translate(58 226)"><circle class="pulse d3" r="10" fill="#BE8C84"/><rect x="-7" y="-7" width="14" height="14" rx="2" transform="rotate(45)" fill="#FFFDF4"/></g>
+        <!-- labels -->
+        <g font-family="Hanken Grotesk, sans-serif" font-size="14" fill="#C9CFD3">
+          <text x="376" y="200" font-family="Young Serif, Georgia, serif" font-size="22" fill="#FFFDF4">Edmonton</text>
+          <text x="306" y="62" font-family="Young Serif, Georgia, serif" font-size="18" fill="#FFFDF4">St. Albert</text>
+          <text x="16" y="292" font-family="Young Serif, Georgia, serif" font-size="18" fill="#FFFDF4">Stony Plain</text>
+          <text x="152" y="296">Windermere</text>
+          <text x="286" y="328">Ambleside</text>
+          <text x="214" y="372">Keswick</text>
+          <text x="330" y="372">Rutherford</text>
+        </g>
+        <use href="#i-spark" x="470" y="300" width="26" height="26" color="#BE8C84"/>
+        <use href="#i-spark" x="140" y="120" width="16" height="16" color="#FFFDF4"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Your trusted cleaning professionals for Southwest Edmonton</h2>
+      <p class="lead">Preparing for a special event or need a thorough deep clean? Get in touch today and experience the Mess&#8209;B&#8209;Gone difference.</p>
+      <div class="details">
+        <a href="tel:+15875455036"><span class="ic"><svg><use href="#i-phone"/></svg></span><span><small>Phone</small><b>(587) 545-5036</b></span></a>
+        <a href="mailto:info@messbgone.ca"><span class="ic"><svg><use href="#i-mail"/></svg></span><span><small>Email</small><b>info@messbgone.ca</b></span></a>
+        <div class="row"><span class="ic"><svg><use href="#i-pin"/></svg></span><span><small>Address</small><b>2049 209A St NW, Edmonton, T6M 3C8</b></span></div>
+        <div class="row"><span class="ic"><svg><use href="#i-clock"/></svg></span><span><small>Hours</small><b>Monday to Saturday, 9:00am to 5:00pm</b></span></div>
+      </div>
+    </div>
+    <form class="quote" id="quote" novalidate>
+      <h3>Request your free consultation</h3>
+      <p class="sub">Tell us about your space and we’ll get back to you.</p>
+      <div class="grid2">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+        <div class="field full"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field full"><label for="f-msg">Comments</label><textarea id="f-msg" name="comments" placeholder="Home or business, size of the space, what you need cleaned"></textarea></div>
+      </div>
+      <button class="btn btn-rose" type="submit">Send my request</button>
+      <p class="form-msg" id="form-msg" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="https://www.messbgone.ca"><img src="images/mess-b-gone-logo.png" alt="Mess-B-Gone Cleaning Services logo" loading="lazy"></a>
+        <p class="about-f">Residential and commercial cleaning in Edmonton, including Southwest Edmonton and Windermere.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="https://www.messbgone.ca">Home</a></li>
+          <li><a href="https://www.messbgone.ca/services">Services</a></li>
+          <li><a href="https://www.messbgone.ca/gallery">Gallery</a></li>
+          <li><a href="https://www.messbgone.ca/contact-us">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>2049 209A St NW, Edmonton, T6M 3C8</li>
+          <li><a href="tel:+15875455036">(587) 545-5036</a></li>
+          <li><a href="mailto:info@messbgone.ca">info@messbgone.ca</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service area</h4>
+        <ul><li>Edmonton</li><li>St. Albert</li><li>Stony Plain</li></ul>
+        <h4 style="margin-top:26px">Hours</h4>
+        <ul><li>Monday to Saturday</li><li>9:00am to 5:00pm</li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Copyright © <span id="yr">2026</span> Mess-B-Gone Cleaning Services. <a href="https://a44dbe1e-882a-401b-8e9b-7657a0263447.filesusr.com/ugd/6494a2_fbbef2c7edaf45a584882c90dfcf9950.pdf" target="_blank" rel="noopener">Policy</a></span>
+      <span>Design by <a href="https://cleaningdigital.ca/" target="_blank" rel="noopener">Cleaning Digital</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // sticky header state
+  var head=document.querySelector('header.site');
+  var onScroll=function(){head.classList.toggle('scrolled',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  // mobile menu
+  var mb=document.querySelector('.menu-btn'),nav=document.getElementById('mainnav');
+  mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+
+  // service tabs
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  function select(t){
+    tabs.forEach(function(x){
+      var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;
+      var p=document.getElementById(x.getAttribute('aria-controls'));
+      p.hidden=!on;p.classList.remove('show');if(on){void p.offsetWidth;p.classList.add('show')}
+    });
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){select(t)});
+    t.addEventListener('keydown',function(e){
+      var k=e.key,n=null;
+      if(k==='ArrowDown'||k==='ArrowRight')n=tabs[(i+1)%tabs.length];
+      if(k==='ArrowUp'||k==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];
+      if(n){e.preventDefault();select(n);n.focus()}
+    });
+  });
+
+  // checklist ticks when it comes into view
+  var cl=document.getElementById('checklist');
+  var boxes=cl.querySelectorAll('.box');
+  boxes.forEach(function(b,i){b.style.transitionDelay=(i*70)+'ms';b.style.setProperty('--d',i)});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){cl.classList.add('ticked');io.disconnect()}})},{threshold:.35});
+    io.observe(cl);
+  } else cl.classList.add('ticked');
+  // stagger the tick marks too
+  var st=document.createElement('style');var css='';
+  boxes.forEach(function(b,i){css+='.checklist li:nth-child('+(i+1)+') .box::after{transition-delay:'+(i*70+120)+'ms}'});
+  st.textContent=css;document.head.appendChild(st);
+
+  // home / business switch
+  var sw=document.getElementById('switch'),art=document.getElementById('space-art');
+  var views={home:document.getElementById('v-home'),biz:document.getElementById('v-biz')};
+  sw.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var v=b.dataset.view,cur=v==='home'?'biz':'home';
+      if(b.getAttribute('aria-pressed')==='true')return;
+      sw.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+      sw.classList.toggle('biz',v==='biz');
+      views[cur].classList.add('out');art.style.opacity=0;art.style.transform='translateY(20px)';
+      setTimeout(function(){
+        views[cur].hidden=true;views[cur].classList.remove('out');
+        views[v].hidden=false;views[v].classList.add('out');
+        art.innerHTML='<svg><use href="#i-'+(v==='home'?'house':'office')+'-big"/></svg>';
+        requestAnimationFrame(function(){requestAnimationFrame(function(){views[v].classList.remove('out');art.style.opacity=1;art.style.transform='none'})});
+      },300);
+    });
+  });
+
+  // contact form: opens the visitor's email app with the request filled in
+  var f=document.getElementById('quote'),msg=document.getElementById('form-msg');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=f.name.value.trim(),p=f.phone.value.trim(),m=f.email.value.trim();
+    if(!n||!p||!m){msg.textContent='Add your name, phone and email so we can reach you.';return}
+    var body='Name: '+n+'\nPhone: '+p+'\nEmail: '+m+'\n\n'+f.comments.value;
+    window.location.href='mailto:info@messbgone.ca?subject='+encodeURIComponent('Free consultation request')+'&body='+encodeURIComponent(body);
+    msg.textContent='Your email app is opening with your request. Press send to finish.';
+  });
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
