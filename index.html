@@ -94,11 +94,11 @@ nav.main a[aria-current="page"]{background:var(--ink);color:var(--cream)}
 @keyframes draw{to{stroke-dashoffset:0}}
 .stage .diamond{position:absolute;top:4%;left:12%;width:84%;height:84%;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);overflow:hidden;background:#3a474e;cursor:grab;touch-action:pan-y}
 .stage .diamond:active{cursor:grabbing}
-.stage .diamond img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%;user-select:none;-webkit-user-drag:none}
+.stage .diamond img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;user-select:none;-webkit-user-drag:none}
 .stage canvas{position:absolute;inset:0;width:100%;height:100%;transition:opacity .9s ease}
 .stage.done canvas{opacity:0}
 .stage .mini{position:absolute;left:0;bottom:2%;width:36%;aspect-ratio:1/1;background:var(--cream);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);opacity:0;transform:translateY(20px);animation:rise .8s cubic-bezier(.2,.8,.2,1) .9s forwards}
-.stage .mini img{position:absolute;inset:7%;width:86%;height:86%;object-fit:cover;object-position:35% 50%;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.stage .mini img{position:absolute;inset:7%;width:86%;height:86%;object-fit:cover;object-position:50% 50%;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
 .stage .ring{position:absolute;top:-2%;right:-3%;width:132px;height:132px;opacity:0;animation:rise .7s ease 1.3s forwards}
 .stage .ring svg{width:100%;height:100%;display:block}
 .stage .ring .turn{transform-origin:60px 60px;animation:spin 22s linear infinite}
@@ -143,7 +143,7 @@ nav.main a[aria-current="page"]{background:var(--ink);color:var(--cream)}
 .about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}
 .frame{position:relative}
 .frame .photo{border-radius:240px 240px 24px 24px;overflow:hidden;aspect-ratio:4/5}
-.frame .photo img{width:100%;height:100%;object-fit:cover;object-position:40% 50%}
+.frame .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
 .frame .stamp{position:absolute;right:-28px;top:38px;width:132px;height:132px;background:var(--ink);color:var(--cream);transform:rotate(45deg);border-radius:14px;display:grid;place-items:center}
 .frame .stamp div{transform:rotate(-45deg);text-align:center;font-family:var(--serif);font-size:19px;line-height:1.1}
 .frame .stamp small{display:block;font-family:var(--sans);font-size:12px;color:var(--rose);margin-top:4px}
@@ -170,13 +170,20 @@ nav.main a[aria-current="page"]{background:var(--ink);color:var(--cream)}
 .svc [role="tab"]:focus-visible{outline:3px solid var(--rose);outline-offset:-3px}
 .svc .note{margin-top:auto;padding:26px 30px;font-size:15px;color:var(--muted);border-top:1px solid var(--line)}
 .svc .note a{color:var(--rose-deep);font-weight:600}
-.panel{padding:52px 56px;position:relative}
+.panel{display:grid;grid-template-columns:1.1fr .9fr;position:relative}
+.pbody{padding:52px 48px 52px 56px}
+.ph{margin:0;position:relative;min-height:100%;overflow:hidden}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.panel.show .ph img{animation:zoomIn 1.4s cubic-bezier(.2,.7,.2,1)}
+@keyframes zoomIn{from{transform:scale(1.08)}to{transform:none}}
+.ph::before{content:"";position:absolute;left:-1px;top:0;bottom:0;width:70px;background:#fff;clip-path:polygon(0 0,100% 50%,0 100%);z-index:1}
+.ph .spark{right:22px;bottom:22px;width:34px;height:34px;color:var(--cream);filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
 .panel[hidden]{display:none}
 .panel.show{animation:panelIn .45s ease}
 @keyframes panelIn{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
 .panel h3{font-size:clamp(28px,2.6vw,38px)}
 .panel p{margin-top:16px;color:var(--muted);max-width:62ch}
-.panel ul{margin:30px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px}
+.panel ul{margin:28px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:1fr;gap:12px}
 .panel li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
 .panel li svg{width:22px;height:22px;flex:none;color:var(--rose-deep);margin-top:2px}
 .panel .btn{margin-top:36px}
@@ -204,8 +211,12 @@ nav.main a[aria-current="page"]{background:var(--ink);color:var(--cream)}
 .switch button:focus-visible{outline:3px solid var(--rose);border-radius:999px}
 .switch .pill{position:absolute;top:5px;bottom:5px;left:5px;width:calc(50% - 5px);background:var(--ink);border-radius:999px;transition:transform .45s cubic-bezier(.6,.1,.25,1)}
 .switch.biz .pill{transform:translateX(100%)}
-.space-card{background:var(--ink);color:var(--cream);border-radius:32px;padding:48px;position:relative;overflow:hidden;min-height:440px}
-.space-card .art{position:absolute;right:-30px;bottom:-30px;width:260px;height:260px;color:rgba(190,140,132,.22);transition:opacity .4s,transform .5s}
+.space-card{background:var(--ink);color:var(--cream);border-radius:32px;padding:0 48px 44px;position:relative;overflow:hidden}
+.space-card .pic{margin:0 -48px 34px;aspect-ratio:16/9;position:relative;overflow:hidden}
+.space-card .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .6s ease,transform 1.2s ease}
+.space-card .pic img.on{opacity:1;transform:none}
+.space-card .pic::after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(to top,var(--ink),transparent)}
+.space-card .art{position:absolute;right:-24px;bottom:-24px;width:180px;height:180px;color:rgba(190,140,132,.14);transition:opacity .4s,transform .5s}
 .space-card .art svg{width:100%;height:100%}
 .space-card .view{position:relative;transition:opacity .35s,transform .35s}
 .space-card .view[hidden]{display:none}
@@ -313,6 +324,10 @@ footer{background:#172126;color:#B9C1C6;padding:84px 0 0;font-size:15px}
   .svc [role="tablist"]{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line)}
   .svc [role="tab"]{border-bottom:0;border-right:1px solid var(--line);font-size:19px;padding:20px 22px;white-space:nowrap}
   .svc .note{display:none}
+  .panel{grid-template-columns:1fr}
+  .ph{min-height:0;aspect-ratio:4/3;order:-1}
+  .ph::before{display:none}
+  .pbody{padding:40px 36px}
   .extras{grid-template-columns:1fr;gap:28px}
   .foot{grid-template-columns:1fr 1fr}
   .frame{max-width:460px}
@@ -324,7 +339,7 @@ footer{background:#172126;color:#B9C1C6;padding:84px 0 0;font-size:15px}
   .topbar ul li.hide-sm{display:none}
   .brand img{width:66px;height:66px}
   .hero .wrap{padding:56px 0 70px}
-  .panel{padding:34px 24px}
+  .pbody{padding:30px 22px}
   .panel ul{grid-template-columns:1fr}
   .checklist{columns:1}
   .track{grid-template-columns:1fr}
@@ -337,7 +352,8 @@ footer{background:#172126;color:#B9C1C6;padding:84px 0 0;font-size:15px}
   .band li+li{border-left:0;border-top:1px solid rgba(30,42,48,.18)}
   .grid2{grid-template-columns:1fr}
   form.quote{padding:30px 22px}
-  .space-card{padding:34px 26px}
+  .space-card{padding:0 26px 34px}
+  .space-card .pic{margin:0 -26px 26px}
   .stage .badge{right:0;bottom:-3%;padding:10px 14px 10px 10px}
   .stage .badge span{display:none}
   .hero .stage{margin-bottom:12px}
@@ -439,10 +455,10 @@ footer{background:#172126;color:#B9C1C6;padding:84px 0 0;font-size:15px}
       <div class="backplate"></div>
       <svg class="outline" viewBox="0 0 100 100" preserveAspectRatio="none"><path pathLength="300" d="M50 1 99 50 50 99 1 50Z"/></svg>
       <div class="diamond" id="wipe">
-        <img src="images/counter-cleaning.jpg" alt="" draggable="false">
+        <img src="images/hero-diamond.jpg" alt="" draggable="false">
         <canvas id="grime"></canvas>
       </div>
-      <div class="mini"><img src="images/cleaning-supplies-kit.jpg" alt=""></div>
+      <div class="mini"><img src="images/hero-caddy.jpg" alt=""></div>
       <span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span><span class="bubble b4"></span><span class="bubble b5"></span>
       <div class="ring">
         <svg viewBox="0 0 120 120">
@@ -481,7 +497,7 @@ footer{background:#172126;color:#B9C1C6;padding:84px 0 0;font-size:15px}
 <section class="about" id="about">
   <div class="wrap">
     <div class="frame">
-      <div class="photo"><img src="images/cleaning-supplies-kit.jpg" alt="A caddy of cleaning supplies on a granite kitchen counter" loading="lazy"></div>
+      <div class="photo"><img src="images/about-kitchen.jpg" alt="A bright, freshly cleaned kitchen with a caddy of cleaning supplies on the island" loading="lazy"></div>
       <div class="stamp"><div>Free<small>in-home consultation</small></div></div>
       <span class="spark"><svg><use href="#i-spark"/></svg></span>
     </div>
@@ -514,6 +530,7 @@ footer{background:#172126;color:#B9C1C6;padding:84px 0 0;font-size:15px}
       </div>
 
       <div class="panel show" role="tabpanel" id="p-general" aria-labelledby="t-general">
+        <div class="pbody">
         <h3>General cleaning</h3>
         <p>Thorough cleaning that keeps your home or office fresh and inviting. Whether it’s regular upkeep or a one-time refresh, we take care of every corner and leave your space clean, healthy and organized.</p>
         <ul>
@@ -523,9 +540,12 @@ footer{background:#172126;color:#B9C1C6;padding:84px 0 0;font-size:15px}
           <li><svg><use href="#i-check"/></svg>Flexible scheduling</li>
         </ul>
         <a class="btn btn-ink" href="https://www.messbgone.ca/services">View all services</a>
+        </div>
+        <figure class="ph"><img src="images/service-general.jpg" alt="A cleaner dusting a bookshelf in a bright living room" loading="lazy"><span class="spark"><svg><use href="#i-spark"/></svg></span></figure>
       </div>
 
       <div class="panel" role="tabpanel" id="p-deep" aria-labelledby="t-deep" hidden>
+        <div class="pbody">
         <h3>Deep cleaning</h3>
         <p>Goes beyond the surface to tackle the areas that often get overlooked. Ideal before a special event or when your home or office needs a fresh start.</p>
         <ul>
@@ -536,9 +556,12 @@ footer{background:#172126;color:#B9C1C6;padding:84px 0 0;font-size:15px}
           <li><svg><use href="#i-check"/></svg>Floors and high-traffic areas</li>
         </ul>
         <a class="btn btn-ink" href="https://www.messbgone.ca/services">View all services</a>
+        </div>
+        <figure class="ph"><img src="images/service-deep.jpg" alt="Gloved hands scrubbing tile grout with a brush" loading="lazy"><span class="spark"><svg><use href="#i-spark"/></svg></span></figure>
       </div>
 
       <div class="panel" role="tabpanel" id="p-move" aria-labelledby="t-move" hidden>
+        <div class="pbody">
         <h3>Move-in / move-out cleaning</h3>
         <p>Moving is stressful enough. Whether you’re settling into a new home or leaving an old one behind, we make sure every room is fresh, clean and ready for the next chapter.</p>
         <ul>
@@ -548,6 +571,8 @@ footer{background:#172126;color:#B9C1C6;padding:84px 0 0;font-size:15px}
           <li><svg><use href="#i-check"/></svg>Deep-cleaning appliances</li>
         </ul>
         <a class="btn btn-ink" href="https://www.messbgone.ca/services">View all services</a>
+        </div>
+        <figure class="ph"><img src="images/service-move.jpg" alt="An empty, freshly cleaned living room with moving boxes" loading="lazy"><span class="spark"><svg><use href="#i-spark"/></svg></span></figure>
       </div>
     </div>
 
@@ -585,6 +610,7 @@ footer{background:#172126;color:#B9C1C6;padding:84px 0 0;font-size:15px}
       </div>
     </div>
     <div class="space-card" aria-live="polite">
+      <div class="pic"><img class="on" id="pic-home" src="images/space-home.jpg" alt="A bright, tidy open-plan living room and kitchen" loading="lazy"><img id="pic-biz" src="images/space-business.jpg" alt="A cleaner vacuuming a modern office after hours" loading="lazy"></div>
       <div class="art" id="space-art"><svg><use href="#i-house-big"/></svg></div>
       <div class="view" id="v-home">
         <h3>Residential cleaning</h3>
@@ -811,6 +837,7 @@ footer{background:#172126;color:#B9C1C6;padding:84px 0 0;font-size:15px}
     b.addEventListener('click',function(){
       var v=b.dataset.view,cur=v==='home'?'biz':'home';
       if(b.getAttribute('aria-pressed')==='true')return;
+      document.getElementById('pic-home').classList.toggle('on',v==='home');document.getElementById('pic-biz').classList.toggle('on',v==='biz');
       sw.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
       sw.classList.toggle('biz',v==='biz');
       views[cur].classList.add('out');art.style.opacity=0;art.style.transform='translateY(20px)';
@@ -841,7 +868,7 @@ footer{background:#172126;color:#B9C1C6;padding:84px 0 0;font-size:15px}
     var img=wrap.querySelector('img'),ctx=cv.getContext('2d');
     if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){stage.classList.add('done');return}
     var S=0,dpr=1,G=18,grid,need=0,got=0,last=null,done=false,touched=false,idle;
-    function cover(c,w,h){var k=Math.max(w/img.naturalWidth,h/img.naturalHeight),dw=img.naturalWidth*k,dh=img.naturalHeight*k;c.drawImage(img,(w-dw)*.5,(h-dh)*.38,dw,dh)}
+    function cover(c,w,h){var k=Math.max(w/img.naturalWidth,h/img.naturalHeight),dw=img.naturalWidth*k,dh=img.naturalHeight*k;c.drawImage(img,(w-dw)*.5,(h-dh)*.5,dw,dh)}
     function paint(){
       dpr=Math.min(window.devicePixelRatio||1,2);S=wrap.clientWidth;
       cv.width=S*dpr;cv.height=S*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
